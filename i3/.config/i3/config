@@ -1,0 +1,112 @@
+set $mod Mod4
+floating_modifier $mod
+
+gaps inner 2
+
+# Colors
+set $rosewater #f4dbd6
+set $flamingo  #f0c6c6
+set $pink      #f5bde6
+set $mauve     #c6a0f6
+set $red       #ed8796
+set $maroon    #ee99a0
+set $peach     #f5a97f
+set $green     #a6da95
+set $teal      #8bd5ca
+set $sky       #91d7e3
+set $sapphire  #7dc4e4
+set $blue      #8aadf4
+set $lavender  #b7bdf8
+set $text      #cad3f5
+set $subtext1  #b8c0e0
+set $subtext0  #a5adcb
+set $overlay2  #939ab7
+set $overlay1  #8087a2
+set $overlay0  #6e738d
+set $surface2  #5b6078
+set $surface1  #494d64
+set $surface0  #363a4f
+set $base      #24273a
+set $mantle    #1e2030
+set $crust     #181926
+
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+# Windows
+font pango:MesloLGS NF 11
+for_window [class="^.*"] border pixel 2
+
+bindsym $mod+Shift+c kill
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# bindsym $mod+h split h
+# bindsym $mod+v split v
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+
+# Workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+
+# Custom Keybindings
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5
+bindsym XF86AudioMute exec --no-startup-id pamixer -t
+bindsym Print exec --no-startup-id flameshot gui
+bindsym $mod+space exec --no-startup-id rofi -show drun
+bindsym $mod+Return exec --no-startup-id alacritty
+
+# Custom Behavior
+for_window [class="processing-app-Base"] floating enable
+for_window [class="^python*"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [title="Preferences$"] floating enable
+
+assign [class="discord"] 1
+assign [class="Firefox"] 2
+
+# Autostart
+exec --no-startup-id polybar example
+exec --no-startup-id setxkbmap -layout de
+exec_always --no-startup-id pipewire
+exec_always --no-startup-id wireplumber
+exec_always --no-startup-id pipewire-pulse
+exec_always --no-startup-id flameshot
+exec_always --no-startup-id ~/.screenlayout/single.sh
+exec_always --no-startup-id nitrogen --restore
+
+# Modes
+bindsym $mod+r mode "Resize"
+mode "Resize" {
+	bindsym h resite shrink width 5 px or 5 ppt
+	bindsym j resite shrink height 5 px or 5 ppt
+	bindsym k resite shrink height 5 px or 5 ppt
+	bindsym l resite shrink width 5 px or 5 ppt
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
