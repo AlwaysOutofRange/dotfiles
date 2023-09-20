@@ -10,7 +10,8 @@ plug "agkozak/zsh-z"
 alias pvenv="poetry shell"
 alias hx="helix"
 
-# path
+# exports
+export EDITOR=hx
 export PATH=$PATH:/home/nico/go/bin
 
 # Load and initialise completion system
