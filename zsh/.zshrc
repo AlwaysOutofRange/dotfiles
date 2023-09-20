@@ -8,7 +8,6 @@ plug "agkozak/zsh-z"
 
 # aliases
 alias pvenv="poetry shell"
-alias hx="helix"
 
 # exports
 export EDITOR=hx
