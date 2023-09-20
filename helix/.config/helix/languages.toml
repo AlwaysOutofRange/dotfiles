@@ -1,0 +1,15 @@
+[[language]]
+name = "python"
+roots = ["pyproject.toml"] 
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
+comment-token = "#"
+auto-format = true
+config = { pyright = { autoImportCompletion = true, python = { analysis = { autoSearchPaths = true, diagnosticMode = "openFilesOnly", typeCheckingMode = "basic", useLibraryCodeForTypes = true, disableOrganizeImports = false } } } }
+
+[language.formatter]
+command = "black"
+args = [
+  "-",
+  "--quiet",
+  "--line-length=88"
+]

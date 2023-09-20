@@ -1,0 +1,65 @@
+theme = "catppuccin_mocha"
+
+# Editor configuration
+[editor]
+line-number = "relative"
+mouse = false
+true-color = true
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+
+[editor.indent-guides]
+render = true
+character = "▏"
+skip-level = 1
+
+[editor.statusline]
+left = [
+  "mode", 
+  "spinner", 
+  "file-name", 
+  "file-modification-indicator"
+]
+right = [
+  "version-control", 
+  "diagnostics", 
+  "selections", 
+  "position", 
+  "file-encoding", 
+  "file-line-ending", 
+  "file-type"
+]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+# Keymap configuation
+[keys.insert]
+C-h = "move_char_left"
+C-j = "move_line_down"
+C-k = "move_line_up"
+C-l = "move_char_right"
+j = { k = "normal_mode" }
+
+[keys.normal]
+c = { a = "code_action" }
+C-s = ":w"
+"space" = { c = ":wbc" }
+
