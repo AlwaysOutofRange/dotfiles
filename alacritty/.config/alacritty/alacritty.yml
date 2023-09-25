@@ -1,5 +1,25 @@
+live_config_reload: true
+
 env:
   TERM: xterm-256color
 
 import:
   - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+
+font:
+  normal:
+    family: "FiraCode Nerd Font"
+    style: Light
+
+  bold:
+    family: "FiraCode Nerd Font"
+    style: Bold
+
+  italic:
+    family: "FiraCode Nerd Font"
+    style: Italic
+
+window:
+  decorations: None
+  opacity: 0.9
+  dynamic_padding: true

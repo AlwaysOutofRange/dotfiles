@@ -11,5 +11,6 @@ command = "black"
 args = [
   "-",
   "--quiet",
-  "--line-length=88"
+  "--line-length=88",
+  "--preview"
 ]

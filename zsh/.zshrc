@@ -13,9 +13,13 @@ alias pvenv="poetry shell"
 export EDITOR=hx
 export PATH=$PATH:/home/nico/go/bin
 
+# loads .zfunc
+fpath+=~/.zfunc
+
 # Load and initialise completion system
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
 
+eval "$(register-python-argcomplete pipx)"
 eval "$(starship init zsh)"

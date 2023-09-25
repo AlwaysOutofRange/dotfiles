@@ -1,6 +1,37 @@
-"$schema" = "https://starship.rs/config-schema.json"
-
 palette = "catppuccin_macchiato"
+
+[character]
+# Note the use of Catppuccin color 'maroon'
+success_symbol = "[[♥](green) ❯](maroon)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[directory]
+truncation_length = 4
+# Catppuccin 'lavender'
+style = "bold lavender"
+
+# Symblos/configs
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[lua]
+symbol = " "
+
+[os.symbols]
+Linux = " "
+
+[package]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
