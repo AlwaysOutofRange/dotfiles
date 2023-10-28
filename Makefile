@@ -1,6 +1,6 @@
 TARGET_DIR = /home/nico
 
-PACKAGES = alacritty helix i3 polybar rofi starship zsh
+PACKAGES = alacritty helix i3 polybar rofi starship zsh nvim
 
 all: stow
 

@@ -1,4 +1,5 @@
 palette = "catppuccin_macchiato"
+command_timeout = 10
 
 [character]
 # Note the use of Catppuccin color 'maroon'

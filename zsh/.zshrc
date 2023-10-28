@@ -21,5 +21,6 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
 
-eval "$(register-python-argcomplete pipx)"
+# eval "$(register-python-argcomplete pipx)"
 eval "$(starship init zsh)"
+eval "$(jump shell)"
